@@ -3421,6 +3421,7 @@ Snakes = function() {
 
     onready: function() {
       this.runner.start();
+			this.newGame();							// start Game
     },
 
     onnewGame: function() {
@@ -3573,24 +3574,24 @@ Snakes = function() {
     playClickFx:     function()   { if (this.allowFx()    && this.isNotMute()) { this.sounds.click.play();     } },
     playHighScoreFx: function()   { if (this.allowFx()    && this.isNotMute()) { this.sounds.highscore.play(); } },
 
-    // buildMenu: function() {
-    //   var n, difficulties = [];
-    //   for(n = 0 ; n < cfg.difficulties.length ; n++)
-    //     difficulties.push(cfg.difficulties[n].label);
-		//
-    //   return new Game.Menu(this.dom.overlay, this, {
-    //     id: 'menu',
-    //     visible: false,
-    //     onselect: function() { this.playClickFx(); },
-    //     onclick:  function() { this.playClickFx(); },
-    //     items: [
-    //       { text: 'New Game',    title: "Start a new game of snakes...",    action: function()  { this.newGame();          }                                                        },
-    //       {                      title: "Change Difficulty level",          action: function(d) { this.resetDifficulty(d); }, choice: difficulties, chosen: this.storage.difficulty },
-    //       { text: 'High Scores', title: "View the high score table",        action: function()  { this.viewScores();       }                                                        },
-    //       { text: 'Credits',     title: "Thanks to the games contributors", action: function()  { this.viewCredits();      }                                                        },
-    //     ]
-    //   });
-    // },
+     buildMenu: function() {
+      var n, difficulties = [];
+      for(n = 0 ; n < cfg.difficulties.length ; n++)
+        difficulties.push(cfg.difficulties[n].label);
+
+      return new Game.Menu(this.dom.overlay, this, {
+        id: 'menu',
+        visible: false,
+        onselect: function() { this.playClickFx(); },
+        onclick:  function() { this.playClickFx(); },
+        items: [
+          { text: 'New Game',    title: "Start a new game of snakes...",    action: function()  { this.newGame();          }                                                        },
+          {                      title: "Change Difficulty level",          action: function(d) { this.resetDifficulty(d); }, choice: difficulties, chosen: this.storage.difficulty },
+          { text: 'High Scores', title: "View the high score table",        action: function()  { this.viewScores();       }                                                        },
+          { text: 'Credits',     title: "Thanks to the games contributors", action: function()  { this.viewCredits();      }                                                        },
+        ]
+     });
+    },
 
     buildQuitMenu: function() {
       return new Game.Menu(this.dom.overlay, this, {
