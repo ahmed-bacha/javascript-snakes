@@ -1,6 +1,9 @@
 Javascript Snakes
 =================
 
+[ ![Codeship Status for ahmed-bacha/javascript-snakes](https://codeship.com/projects/e7a0f9c0-5e21-0132-51b1-72d241f098bc/status)](https://codeship.com/projects/51273)
+
+
 An HTML5 Snakes Game
 
  * [play the game](http://codeincomplete.com/projects/snakes/)
@@ -36,7 +39,7 @@ unified (and minified) for the final run-time game:
     snakes.min.css # the unified and minified css stylesheet
     fruit.png      # multiple fruit image spritesheet
     head.png       # multiple snake head image spritesheet
- 
+
 If you have the Ruby language available, Rake tasks can be used to auto generate these
 unified files:
 
@@ -79,5 +82,3 @@ for and licensed from [iStockPhoto](http://istockphoto.com), [Lucky Lion Studios
 and should not be reproduced.
 
 Thanks for your honesty!
-
-
